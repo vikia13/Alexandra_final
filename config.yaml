@@ -1,0 +1,34 @@
+# ============================================================
+# Profil: ALEXANDRA — orchestrator al echipei
+# NOTA: descrierea profilului (folosita de Kanban pentru rutare) se seteaza
+# separat, prin comanda: alexandra description "..." — vezi INSTALARE.md
+# ============================================================
+model:
+  default: deepseek-v4-pro
+  provider: deepseek
+
+terminal:
+  cwd: /home/victor/Desktop/Agents/Alexandra
+  # Nota: terminal.cwd e respectat de gateway (Telegram) si de cron.
+  # Pentru sesiuni CLI interactive, Hermes foloseste directorul din care
+  # a fost pornita comanda, nu acest cwd — irelevant aici, folosim gateway.
+
+# Accesul de citire la folderele Gheorghe/Vasile/Dinu (necesar pentru
+# auditul de duminica) NU se configureaza aici — Hermes nu limiteaza
+# accesul la fisiere prin config. Se realizeaza exclusiv prin permisiuni
+# Linux reale (grup agent-alexandra membru in agent-gheorghe/vasile/dinu)
+# — vezi INSTALARE.md, pasul de permisiuni.
+
+compression:
+  threshold: 0.88
+  target_ratio: 0.20
+  protect_last_n: 20
+
+delegation:
+  orchestrator_enabled: true
+  max_spawn_depth: 2   # poate delega, iar cei delegati pot delega mai departe (rol de supervizor)
+
+platform_toolsets:
+  telegram: [terminal, web, kanban, cronjob, memory]
+
+timezone: Europe/Lisbon
