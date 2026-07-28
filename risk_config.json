@@ -1,0 +1,20 @@
+{
+  "_comment": "Sursa unica pentru risc la trading. Citit de AI_TRADING_OS si AI_screener_cursor_spec_kiti. Se modifica DOAR de Victor. Agentii pot propune schimbari, nu le pot aplica singuri.",
+  "version": 1,
+  "last_updated_by": "victor",
+  "last_updated": "REPLACE_CU_DATA",
+  "trading": {
+    "capital_max_usd": 200,
+    "leverage_max": 5,
+    "stop_loss_required": true,
+    "stop_loss_default_pct": 2,
+    "testnet_only": true
+  },
+  "schimbare_propusa": {
+    "_comment": "Daca un agent propune o schimbare, o scrie aici. Victor citeste, decide, muta valoarea in sectiunea trading de mai sus daca e de acord.",
+    "propus_de": null,
+    "ce": null,
+    "motiv": null,
+    "data": null
+  }
+}
