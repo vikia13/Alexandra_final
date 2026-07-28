@@ -1,0 +1,24 @@
+# ============================================================
+# Profil: GHEORGHE — dezvoltator
+# NOTA: descrierea profilului se seteaza separat prin: gheorghe description "..."
+# ============================================================
+model:
+  default: mimo-v2.5-pro
+  provider: xiaomi
+
+terminal:
+  cwd: /home/victor/Desktop/Agents/Gheorghe
+
+compression:
+  threshold: 0.88
+  target_ratio: 0.20
+  protect_last_n: 20
+
+delegation:
+  orchestrator_enabled: true
+  max_spawn_depth: 1   # poate crea sub-ajutoare temporare pentru bucati mici de munca
+
+platform_toolsets:
+  telegram: [terminal, web, kanban, cronjob, memory]
+
+timezone: Europe/Lisbon
