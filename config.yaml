@@ -1,0 +1,24 @@
+# ============================================================
+# Profil: VASILE — analist financiar
+# NOTA: descrierea profilului se seteaza separat prin: vasile description "..."
+# ============================================================
+model:
+  default: deepseek-v4-pro
+  provider: deepseek
+
+terminal:
+  cwd: /home/victor/Desktop/Agents/Vasile
+
+compression:
+  threshold: 0.88
+  target_ratio: 0.20
+  protect_last_n: 20
+
+delegation:
+  orchestrator_enabled: true
+  max_spawn_depth: 1
+
+platform_toolsets:
+  telegram: [terminal, web, kanban, cronjob, memory]
+
+timezone: Europe/Lisbon
